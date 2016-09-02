@@ -20,6 +20,8 @@ module RuCaptcha
       @config.cache_limit = 100
       @config.expires_in  = 2.minutes
       @config.style       = :colorful
+      @config.text_color_alpha = 1
+      @config.line_color_alpha = 0.6
       @config
     end
 
