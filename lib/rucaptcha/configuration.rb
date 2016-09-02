@@ -17,5 +17,7 @@ module RuCaptcha
     attr_accessor :text_color_alpha
 
     attr_accessor :line_color_alpha
+
+    attr_accessor :line_num
   end
 end

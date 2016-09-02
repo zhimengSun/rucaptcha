@@ -37,7 +37,7 @@ module RuCaptcha
         half_width   = full_width / 2
         text_top     = 0
         text_left    = 0 - (font_size * 0.28).to_i
-        stroke_width = (font_size * 0.05).to_i + 1
+        stroke_width = 6 # (font_size * 0.05).to_i + 1
         text_width   = font_size + text_left
         text_opts    = []
         line_opts    = []
@@ -65,7 +65,7 @@ module RuCaptcha
           left_y = rand_line_top(text_top, font_size)
           right_x = half_width + (half_width * 0.3).to_i
           right_y = rand_line_top(text_top, font_size)
-          line_opts << %(-draw 'stroke #{line_color} line #{rand(10)},#{left_y} #{right_x},#{right_y}')
+          line_opts << %(-draw 'stroke #{line_color} line #{rand(10)},#{left_y} #{right_x},#{right_y}') if line_opts.size < RuCaptcha.config.line_num
         end
 
         command = <<-CODE
