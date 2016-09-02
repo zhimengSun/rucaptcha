@@ -59,8 +59,8 @@ module RuCaptcha
 
         chars.each_with_index do |char, i|
           rgb = RuCaptcha.config.style == :colorful ? rgbs[i] : rgbs[0]
-          text_color = "rgba(#{rgb.join(',')}, #{RuCaptcha.text_color_alpha})"
-          line_color = "rgba(#{rgb.join(',')}, #{RuCaptcha.line_color_alpha})"
+          text_color = "rgba(#{rgb.join(',')}, #{RuCaptcha.config.text_color_alpha})"
+          line_color = "rgba(#{rgb.join(',')}, #{RuCaptcha.config.line_color_alpha})"
           text_opts << %(-fill '#{text_color}' -draw 'text #{(text_left + text_width) * i + all_left},#{text_top} "#{char}"')
           left_y = rand_line_top(text_top, font_size)
           right_x = half_width + (half_width * 0.3).to_i
